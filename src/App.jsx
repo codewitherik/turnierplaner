@@ -5,7 +5,7 @@ import Login from "./components/auth/Login.jsx";
 import Blog from "./pages/home/Blog.jsx";
 import Features from "./pages/home/Features.jsx";
 import Pricing from "./pages/home/Pricing.jsx"; // "," entfernt
-import Register from "./components/Register.jsx";
+import Register from "./components/auth/Register.jsx";
 import NotFound from "./pages/landing/NotFound.jsx"; // Groß-/Kleinschreibung beachten
 
 export default function App() {
