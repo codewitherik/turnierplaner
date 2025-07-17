@@ -19,7 +19,7 @@ import './index.css';
 /**
  * Routes import (hier musst du deine Router-Konfiguration importieren)
  */
-
+import router from './routes';
 
 // Render
 createRoot(document.getElementById('root')).render(
