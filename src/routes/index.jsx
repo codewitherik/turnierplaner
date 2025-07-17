@@ -7,8 +7,7 @@
 /**
  * Node modules
  */
-import { createBrowserRouter } from "react-router-dom";
-
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 /**
  * Pages
  */
