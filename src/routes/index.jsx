@@ -12,16 +12,30 @@ import { createBrowserRouter } from "react-router-dom";
 /**
  * Pages
  */
+import Home from './pages/home/Tourney';
+import About from './pages/home/About';
+import Login from './components/auth/Login';
+import Register from './components/Register';
+import NotFound from './pages/landing/Notfound';
+import Blog from './pages/home/Blog';
+import Features from './pages/home/Features';
+import Pricing from './pages/home/Pricing';
 
-/**
- * Layouts
- */
-import RootLayout from './layout/RootLayout.jsx'
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <RootLayout />
-    }
-])
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/features" element={<Features />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      {/* 404 Fallback */}
+      <Route path="*" element={<NotFound />} />
+    </>
+  )
+);
 
 export default router;
