@@ -1,20 +1,40 @@
-import React, { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { ClerkProvider } from '@clerk/clerk-react';
-import App from './App.jsx';
-import './index.css';
+import React, { StrictMode, useEffect, useRef } from "react";
+import { createRoot } from "react-dom/client";
+import { ClerkProvider } from "@clerk/clerk-react";
+import App from "./App.jsx";
+import "./index.css";
+import Lenis from "@studio-freight/lenis";
 
-// Publishable Key aus .env (VITE_CLERK_PUBLISHABLE_KEY)
 const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-if (!publishableKey) {
-  throw new Error('Fehler: VITE_CLERK_PUBLISHABLE_KEY ist nicht gesetzt in der .env Datei');
-}
+function Root() {
+  const lenisRef = useRef(null);
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  useEffect(() => {
+    lenisRef.current = new Lenis({
+      duration: 1.2,
+      easing: (t) => t * (2 - t),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenisRef.current.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => lenisRef.current.destroy();
+  }, []);
+
+  return (
     <ClerkProvider publishableKey={publishableKey}>
       <App />
     </ClerkProvider>
+  );
+}
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <Root />
   </StrictMode>
 );
