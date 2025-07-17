@@ -1,24 +1,21 @@
-/**
- * @copyright 2025 Tourney-Turnierplaner
- * @license MIT License
- * @description Main react file for the app
- */
-
-/**
- * Node modules
- */
-import React, { StrictMode } from 'react';           // 'StrictMode' mit großem M
-import { createRoot } from 'react-dom/client';  // 'react-router-dom' für Browser-Router
-
-/**
- * Css LINK 
- */
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import './index.css';
+import App from './App.tsx';
+import { ClerkProvider } from '@clerk/clerk-react';
 
+// ✅ Publishable Key aus .env
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
+if (!PUBLISHABLE_KEY) {
+  throw new Error('⚠️ Füge deinen Clerk Publishable Key zur .env-Datei hinzu');
+}
 
-// Render
+// ✅ React-Root erstellen & ClerkProvider einbinden
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <App />
+    </ClerkProvider>
   </StrictMode>
 );
