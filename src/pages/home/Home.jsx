@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar"; // Stelle sicher, dass dieser Pfad korrekt ist
+import Navbar from "../components/Navbar"; // Stelle sicher, dass der Pfad korrekt ist
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
@@ -19,21 +19,19 @@ export default function Home() {
           <div className="space-x-4">
             <a
               href="/register"
-              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
             >
               Jetzt starten
             </a>
             <a
               href="/pricing"
-              className="border border-blue-600 text-blue-600 px-6 py-2 rounded hover:bg-blue-600 hover:text-white"
+              className="border border-blue-600 text-blue-600 px-6 py-2 rounded hover:bg-blue-600 hover:text-white transition"
             >
               Preise ansehen
             </a>
           </div>
         </div>
       </section>
-
-      {/* Optional: Weitere Abschnitte kannst du hier ergänzen */}
     </>
   );
 }
