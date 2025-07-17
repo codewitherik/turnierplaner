@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import Pricing from "./pages/home/Pricing.jsx";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 export default function App() {
   return (

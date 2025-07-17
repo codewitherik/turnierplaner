@@ -8,7 +8,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 /* Custom Colors & Variables */
 :root {
@@ -273,3 +273,13 @@ template {
 [hidden] {
     display: none !important;
 }
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: transparent; }
+  25%, 75% { border-color: currentColor; }
+}
+
+.animate-blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+

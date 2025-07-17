@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
+import TypewriterHeader from "../../components/Typewriterheader";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
           <p className="text-lg text-gray-600 mb-6">
             Der einfachste Weg, Turniere zu planen und zu verwalten.
           </p>
+           <TypewriterHeader />
           <div className="space-x-4">
             <a
               href="/register"
