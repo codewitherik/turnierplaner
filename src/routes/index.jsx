@@ -4,26 +4,28 @@
  * @description Routes config file for the app
  */
 
-/**
- * Node modules
- */
+import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
-/**
- * Pages
- */
-import Home from './pages/home/tourney.jsx';
-import About from './pages/home/About';
-import Login from './components/auth/Login';
-import Register from './components/Register';
-import NotFound from './pages/landing/Notfound';
-import Blog from './pages/home/Blog';
-import Features from './pages/home/Features';
-import Pricing from './pages/home/Pricing';
 
+const Home = lazy(() => import('./pages/home/index.jsx'));
+const About = lazy(() => import('./pages/home/About'));
+const Blog = lazy(() => import('./pages/home/Blog'));
+const Features = lazy(() => import('./pages/home/Features'));
+const Pricing = lazy(() => import('./pages/home/Pricing'));
+const Register = lazy(() => import('./components/Register'));
+const Login = lazy(() => import('./components/auth/Login'));
+const NotFound = lazy(() => import('./pages/landing/Notfound'));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
+    <Route
+      element={
+        <Suspense fallback={<div>Loading...</div>}>
+          {/* Ein Wrapper für Suspense */}
+          <React.Fragment />
+        </Suspense>
+      }
+    >
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/blog" element={<Blog />} />
@@ -33,7 +35,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       {/* 404 Fallback */}
       <Route path="*" element={<NotFound />} />
-    </>
+    </Route>
   )
 );
 
