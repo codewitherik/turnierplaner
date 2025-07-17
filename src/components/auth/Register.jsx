@@ -1,14 +1,10 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+// src/pages/auth/Register.jsx
+import { SignUp } from "@clerk/clerk-react";
 
-export default function App() {
+export default function Register() {
   return (
-    <header>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </header>
-  )
+    <div className="flex justify-center items-center min-h-screen">
+      <SignUp path="/register" routing="path" />
+    </div>
+  );
 }
