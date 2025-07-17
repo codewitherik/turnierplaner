@@ -11,7 +11,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 /**
  * Pages
  */
-import Home from './pages/home/Tourney';
+import Home from './pages/home/tourney.jsx';
 import About from './pages/home/About';
 import Login from './components/auth/Login';
 import Register from './components/Register';
