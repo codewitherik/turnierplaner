@@ -1,99 +1,58 @@
-/**
- * index.css
- * © 2025 by codewitherik
- * License: MIT
- */
+@import "bootstrap/dist/css/bootstrap.min.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  :root {
+                --blue: #007bff;
+                --indigo: #6610f2;
+                --purple: #6f42c1;
+                --pink: #e83e8c;
+                --red: #dc3545;
+                --orange: #fd7e14;
+                --yellow: #ffc107;
+                --green: #28a745;
+                --teal: #20c997;
+                --cyan: #17a2b8;
+                --white: #fff;
+                --gray: #6c757d;
+                --gray-dark: #343a40;
+                --primary: #f04037;
+                --secondary: #5454d4;
+                --success: #28a745;
+                --info: #17a2b8;
+                --warning: #ffc107;
+                --danger: #dc3545;
+                --light: #f8f9fa;
+                --dark: #343a40;
+                --breakpoint-xs: 0;
+                --breakpoint-sm: 576px;
+                --breakpoint-md: 768px;
+                --breakpoint-lg: 992px;
+                --breakpoint-xl: 1200px;
+                --font-family-sans-serif: 'Jost' sans-serif;
+                --font-family-monospace: 'Inter' sans-serif;
+            }
 
-/* 1. Design Tokens */
-:root {
-  --bg: #ffffff;
-  --fg: #1e293b;
-  --primary: #2563eb;
-  --primary-hover: #1e40af;
-  --secondary: #facc15;
-  --accent: #38bdf8;
-  --muted: #f1f5f9;
-  --muted-fg: #64748b;
+            * {
+              box-sizing: border-box;
+            }
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
+          html {
+            font-family: var(--font-family-monospace);
+            line-height: 1.15;
+          }
 
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Jost', sans-serif;
-}
+          article,aside,figcaption,figure,footer,header,hgroup,main,nav,section {
+                display: block
+            }
 
-/* 2. Base & Typography */
-body {
-  @apply bg-[var(--bg)] text-[var(--fg)] font-sans antialiased;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
+            body {
+              margin: 0px;
+              font-family: var(--font-family-sans-serif);
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 1.5;
+              color: black;
+              text-align: left;
+              background-color: #fff;
+            }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  color: var(--fg);
-  margin-top: 0;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-a:hover {
-  color: var(--accent);
-}
-
-/* 3. Layout & Containers */
-.container {
-  @apply max-w-7xl mx-auto px-4;
-}
-
-.section {
-  @apply py-16 md:py-24;
-}
-
-.text-center {
-  @apply text-center;
-}
-
-img, svg {
-  @apply max-w-full h-auto;
-}
-
-/* 4. UI Elements */
-button {
-  @apply inline-block font-semibold rounded-lg transition duration-300;
-}
-
-.btn-primary {
-  @apply bg-[var(--primary)] text-white px-6 py-3 hover:bg-[var(--primary-hover)];
-}
-
-.btn-secondary {
-  @apply border-2 border-[var(--secondary)] text-[var(--secondary)] px-6 py-3 hover:bg-[var(--secondary)] hover:text-[var(--fg)];
-}
-
-/* 5. Cards & Shadows */
-.card {
-  @apply bg-white rounded-lg shadow-md hover:shadow-lg transition p-6;
-}
-
-/* 6. Utility Classes */
-.bg-muted {
-  background-color: var(--muted);
-}
-.text-muted {
-  color: var(--muted-fg);
-}
-
-.transition-all {
-  @apply transition-all duration-300 ease-in-out;
-}
+            

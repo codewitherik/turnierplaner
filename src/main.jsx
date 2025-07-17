@@ -4,6 +4,8 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import App from "./App.jsx";
 import "./index.css";
 import Lenis from "@studio-freight/lenis";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 

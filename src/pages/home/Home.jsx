@@ -11,6 +11,8 @@ import Blog from "./Blog.jsx";
 import Maps from "./Maps.jsx";
 import Kontact from "./Kontact.jsx";
 import Footer from "../../components/Footer.jsx";
+import Cookiebanner from "../../components/CookieBanneer.jsx"
+import CookieBanner from "../../components/CookieBanneer.jsx";
 export default function Home() {
   return (
     <>
@@ -26,6 +28,7 @@ export default function Home() {
       <Maps></Maps>
       <Kontact></Kontact>
       <Footer></Footer>
+      <CookieBanner></CookieBanner>
       {/* Weitere Sektionen */}
     </>
   );
