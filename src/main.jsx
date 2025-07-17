@@ -8,22 +8,17 @@
  * Node modules
  */
 import React, { StrictMode } from 'react';           // 'StrictMode' mit großem M
-import { createRoot } from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';  // 'react-router-dom' für Browser-Router
+import { createRoot } from 'react-dom/client';  // 'react-router-dom' für Browser-Router
 
 /**
  * Css LINK 
  */
 import './index.css';
 
-/**
- * Routes import (hier musst du deine Router-Konfiguration importieren)
- */
-import router from './routes';
+
 
 // Render
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
   </StrictMode>
 );
