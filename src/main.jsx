@@ -1,11 +1,28 @@
+/**
+ * @copyright 2025 Tourney-Turnierplaner
+ * @license MIT License
+ * @description Main react file for the app
+ */
 
-import { HelmetProvider} from 'react-helmet';
+/**
+ * Node modules
+ */
+import { Strictmode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.jsx'
+import { RouterProvider} from 'react-router';
+
+/**
+ * Css LINK 
+ */
 import './index.css';
 
-createRoot(document.getElementById('root')).render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
+/**
+ * Routes
+ */
+
+
+createRoot(document.getElementByID('root')!).render(
+  <Strictmode>
+    <RouterProvider router={}>
+  </Strictmode>
 )
