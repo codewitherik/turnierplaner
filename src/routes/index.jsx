@@ -7,7 +7,7 @@
 import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
-const Home = lazy(() => import('./pages/home/index.jsx'));
+const Home = lazy(() => import('./pages/home/Tourney.jsx'));
 const About = lazy(() => import('./pages/home/About'));
 const Blog = lazy(() => import('./pages/home/Blog'));
 const Features = lazy(() => import('./pages/home/Features'));
