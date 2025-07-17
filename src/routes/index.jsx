@@ -1,10 +1,4 @@
-/**
- * @copyright 2025 Tourney-Turnierplaner
- * @license MIT License
- * @description Routes config file for the app
- */
-
-import React, { lazy, Suspense } from 'react';
+import React, { lazy } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 const Home = lazy(() => import('./pages/home/Tourney.jsx'));
@@ -18,14 +12,7 @@ const NotFound = lazy(() => import('./pages/landing/Notfound'));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route
-      element={
-        <Suspense fallback={<div>Loading...</div>}>
-          {/* Ein Wrapper für Suspense */}
-          <React.Fragment />
-        </Suspense>
-      }
-    >
+    <>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/blog" element={<Blog />} />
@@ -33,10 +20,10 @@ const router = createBrowserRouter(
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      {/* 404 Fallback */}
       <Route path="*" element={<NotFound />} />
-    </Route>
+    </>
   )
 );
 
 export default router;
+
