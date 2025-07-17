@@ -1,36 +1,39 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import Navbar from "../components/Navbar"; // Stelle sicher, dass dieser Pfad korrekt ist
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
   return (
-    <div className="p-6">
-      <header className="mb-6">
-        <h1 className="text-4xl font-bold">Willkommen bei Tourney</h1>
-        <p className="text-gray-600 mt-2">Dein Turnierplaner 2025</p>
-      </header>
+    <>
+      <Navbar />
 
-      <nav className="mb-6">
-        <ul className="flex space-x-4">
-          <li>
-            <Link to="/" className="text-blue-600 hover:underline">Startseite</Link>
-          </li>
-          <li>
-            <Link to="/pricing" className="text-blue-600 hover:underline">Preise</Link>
-          </li>
-        </ul>
-      </nav>
+      {/* Hero Section */}
+      <section className="bg-gray-100 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Willkommen bei <span className="text-blue-600">Tourney</span>
+          </h1>
+          <p className="text-lg text-gray-600 mb-6">
+            Der einfachste Weg, Turniere zu planen und zu verwalten.
+          </p>
+          <div className="space-x-4">
+            <a
+              href="/register"
+              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+            >
+              Jetzt starten
+            </a>
+            <a
+              href="/pricing"
+              className="border border-blue-600 text-blue-600 px-6 py-2 rounded hover:bg-blue-600 hover:text-white"
+            >
+              Preise ansehen
+            </a>
+          </div>
+        </div>
+      </section>
 
-      <main>
-        <p>
-          Tourney ist dein Tool für einfache und effiziente Turnierplanung.
-          Starte jetzt oder informiere dich über unsere Preispläne!
-        </p>
-        <Link
-          to="/pricing"
-          className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Zu den Preisen
-        </Link>
-      </main>
-    </div>
+      {/* Optional: Weitere Abschnitte kannst du hier ergänzen */}
+    </>
   );
 }
