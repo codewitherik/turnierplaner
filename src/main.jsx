@@ -1,21 +1,40 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App.jsx';
-import { ClerkProvider } from '@clerk/clerk-react';
+import React, { StrictMode, useEffect, useRef } from "react";
+import { createRoot } from "react-dom/client";
+import { ClerkProvider } from "@clerk/clerk-react";
+import App from "./App.jsx";
+import "./index.css";
+import Lenis from "@studio-freight/lenis";
 
-// ✅ Publishable Key aus .env
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-if (!PUBLISHABLE_KEY) {
-  throw new Error('⚠️ Füge deinen Clerk Publishable Key zur .env-Datei hinzu');
-}
+function Root() {
+  const lenisRef = useRef(null);
 
-// ✅ React-Root erstellen & ClerkProvider einbinden
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+  useEffect(() => {
+    lenisRef.current = new Lenis({
+      duration: 1.2,
+      easing: (t) => t * (2 - t),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenisRef.current.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => lenisRef.current.destroy();
+  }, []);
+
+  return (
+    <ClerkProvider publishableKey={publishableKey}>
       <App />
     </ClerkProvider>
+  );
+}
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <Root />
   </StrictMode>
 );
