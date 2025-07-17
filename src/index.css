@@ -8,6 +8,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Custom Colors & Variables */
 :root {

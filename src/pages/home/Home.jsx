@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from ".../components/Navbar.jsx"; // Stelle sicher, dass der Pfad korrekt ist
+import Navbar from "../../components/Navbar";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
